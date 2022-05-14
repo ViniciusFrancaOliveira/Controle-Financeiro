@@ -1,11 +1,13 @@
-﻿namespace ControleFinanceiro.Services.Interface
+﻿using System.Linq.Expressions;
+
+namespace ControleFinanceiro.Repository.Interfaces
 {
     public interface IRepository<T>
     {
-        Task<T> GetAllRevenues();
-        Task<T> GetById(int id);
-        Task<T> Insert(T entity);
-        Task<T> UpdateById(T entity);
-        Task<T> DeleteById(int id);
+        IQueryable<T> GetAll();
+        Task<T> GetById(Expression<Func<T, bool>> predicate);
+        void Insert(T entity);
+        void Update(T entity);
+        void Delete(T entity);
     }
 }

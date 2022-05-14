@@ -1,33 +1,13 @@
-﻿using ControleFinanceiro.Models;
-using ControleFinanceiro.Services.Interface;
+﻿using ControleFinanceiro.Data;
+using ControleFinanceiro.Models;
+using ControleFinanceiro.Repository.Interfaces;
 
 namespace ControleFinanceiro.Repository
 {
-    public class RevenueRepository : IRepository<Revenue>
+    public class RevenueRepository : Repository<Revenue>, IRevenueRepository
     {
-        public Task<Revenue> DeleteById(int id)
+        public RevenueRepository(FinancialContext context) : base(context)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<Revenue> GetAllRevenues()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Revenue> GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Revenue> Insert(Revenue entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Revenue> UpdateById(Revenue entity)
-        {
-            throw new NotImplementedException();
         }
     }
 }

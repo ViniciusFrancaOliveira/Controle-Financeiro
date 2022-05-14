@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ControleFinanceiro.Migrations
 {
     [DbContext(typeof(FinancialContext))]
-    [Migration("20220513000910_initial")]
-    partial class initial
+    [Migration("20220514205712_changed Id names")]
+    partial class changedIdnames
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,11 +26,11 @@ namespace ControleFinanceiro.Migrations
 
             modelBuilder.Entity("ControleFinanceiro.Models.Expenditure", b =>
                 {
-                    b.Property<int>("ExpenditureId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<int>("ExpenditureId"));
+                    NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("timestamp with time zone");
@@ -42,18 +42,18 @@ namespace ControleFinanceiro.Migrations
                     b.Property<decimal>("Value")
                         .HasColumnType("numeric(10,4)");
 
-                    b.HasKey("ExpenditureId");
+                    b.HasKey("Id");
 
                     b.ToTable("Expenditure");
                 });
 
             modelBuilder.Entity("ControleFinanceiro.Models.Revenue", b =>
                 {
-                    b.Property<int>("ExpenditureId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<int>("ExpenditureId"));
+                    NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("timestamp with time zone");
@@ -65,7 +65,7 @@ namespace ControleFinanceiro.Migrations
                     b.Property<decimal>("Value")
                         .HasColumnType("numeric(10,4)");
 
-                    b.HasKey("ExpenditureId");
+                    b.HasKey("Id");
 
                     b.ToTable("Revenue");
                 });

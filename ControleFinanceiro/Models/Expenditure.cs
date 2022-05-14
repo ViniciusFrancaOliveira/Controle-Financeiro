@@ -5,8 +5,9 @@ namespace ControleFinanceiro.Models
 {
     public class Expenditure
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        public int ExpenditureId { get; set; }
+        public int Id { get; set; }
         [Required]
         public string Description { get; set; }
         [Required]
